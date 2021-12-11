@@ -23,8 +23,10 @@ for (let i = 0; i < SQUARES; i++) {
   const square = document.createElement('div');
   square.classList.add('square');
 
-  square.addEventListener(['mouseover','touchstart'], () => setColor(square));
-  square.addEventListener(['mouseout','touchend'], () => removeColor(square));
+  square.addEventListener('mouseover', () => setColor(square));
+  square.addEventListener('mouseout', () => removeColor(square));
+  square.addEventListener('touchmove', () => setColor(square));
+  square.addEventListener('touchend', () => removeColor(square));
   container.appendChild(square);
 }
 
